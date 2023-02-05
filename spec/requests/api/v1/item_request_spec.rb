@@ -106,8 +106,8 @@ describe "Items API" do
   describe "get all the merchant data for a given item ID" do
     it "get the merchant data for a given item ID" do
       item = create(:item).id
-      create_list(:merchant, 7, item_ids: item)
-require 'pry'; binding.pry
+      list = create_list(:merchant, 7, item_ids: item)
+
       get "/api/v1/items/#{item}/merchants"
 
       merchants = JSON.parse(response.body, symbolize_names: true)
@@ -118,7 +118,7 @@ require 'pry'; binding.pry
       merchants.each do |merchant|
         expect(merchant).to have_key(:id)
         expect(merchant[:id]).to be_a(Integer)
-require 'pry'; binding.pry
+
         expect(merchant).to have_key(:name)
         expect(merchant[:name]).to be_a(String)   
       end
