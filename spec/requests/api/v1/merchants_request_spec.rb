@@ -41,9 +41,33 @@ describe "Merchants API" do
     end
   end
 
-  xdescribe " get all items for a given merchant ID" do
-    it " " do
+  describe " get all items for a given merchant ID" do
+    it "get all items for a given merchant" do
+      merchant = create(:merchant).id
+      create_list(:item, 7, merchant_id: merchant)
 
+      get "/api/v1/merchants/#{merchant}/items"
+
+      items = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to be_successful
+      expect(items.count).to eq(7)
+
+      items.each do |item|
+        expect(item).to have_key(:id)
+        expect(item[:id]).to be_a(Integer)
+
+        expect(item).to have_key(:name)
+        expect(item[:name]).to be_a(String)
+
+        expect(item).to have_key(:description)
+        expect(item[:description]).to be_a(String)
+
+        expect(item).to have_key(:unit_price)
+        expect(item[:unit_price]).to be_a(Float)
+
+   
+      end
     end
   end
 end
