@@ -262,6 +262,10 @@
           1,
           null,
           1,
+          null,
+          null,
+          null,
+          null,
           3,
           3,
           null,
@@ -302,6 +306,7 @@
           1,
           null,
           1,
+          null,
           7,
           7,
           null,
@@ -379,6 +384,29 @@
           null
         ]
       },
+      "/Users/janiceweaver/3Mod/projects/rails-engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/janiceweaver/3Mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
@@ -388,11 +416,37 @@
           null,
           1,
           1,
+          0,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/janiceweaver/3Mod/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1675636380
+    "timestamp": 1675707142
   }
 }
