@@ -47,7 +47,9 @@ describe "Merchants API" do
 
   describe " get all items for a given merchant ID" do
     it "get all items for a given merchant" do
+      # require 'pry'; binding.pry
       merchant = create(:merchant).id
+      # require 'pry'; binding.pry
       create_list(:item, 7, merchant_id: merchant)
 
       get "/api/v1/merchants/#{merchant}/items"
@@ -71,8 +73,17 @@ describe "Merchants API" do
         expect(item[:attributes]).to have_key(:unit_price)
         expect(item[:attributes][:unit_price]).to be_a(Float)
 
-   
       end
+    end
+    
+    xit "happy path: get correct error for incorrect amount" do
+      
+
+    end
+
+    xit "sad path: bad integer id returns 404" do
+
+      
     end
   end
 end

@@ -15,33 +15,33 @@ describe "Items API" do
       expect(items[:data].count).to eq(5)
 
       items[:data].each do |item|
-    #  require 'pry'; binding.pry
-        expect(item).to have_key(:id)
-        expect(item[:id]).to be_a(String)
+   
+      expect(item).to have_key(:id)
+      expect(item[:id]).to be_a(String)
 
-        expect(item).to have_key(:type)
-        expect(item[:type]).to be_a(String)
+      expect(item).to have_key(:type)
+      expect(item[:type]).to be_a(String)
 
-        expect(item[:attributes]).to have_key(:name)
-        expect(item[:attributes][:name]).to be_a(String)
+      expect(item[:attributes]).to have_key(:name)
+      expect(item[:attributes][:name]).to be_a(String)
 
-        expect(item[:attributes]).to have_key(:description)
-        expect(item[:attributes][:description]).to be_a(String)
+      expect(item[:attributes]).to have_key(:description)
+      expect(item[:attributes][:description]).to be_a(String)
 
-        expect(item[:attributes]).to have_key(:unit_price)
-        expect(item[:attributes][:unit_price]).to be_a(Float)
+      expect(item[:attributes]).to have_key(:unit_price)
+      expect(item[:attributes][:unit_price]).to be_a(Float)
       end
     end
   end
 
   describe "get one item" do
     it "return a single item" do
-      id = create(:item).id
+      items = create(:item).id
 
-      get "/api/v1/items/#{id}"
+      get "/api/v1/items/#{items}"
 
       item = JSON.parse(response.body, symbolize_names: true)
-
+# require 'pry'; binding.pry
       expect(response).to be_successful
 
       expect(item[:data]).to have_key(:id)
@@ -88,6 +88,10 @@ describe "Items API" do
       expect(created_item.merchant_id).to eq(item_params[:merchant_id])
 
     end
+
+    xit "response should be okay to process | AssertionError: expected response to have status code 201 but got 200" do
+
+    end
   end
 
   describe "edit an item" do
@@ -120,17 +124,18 @@ describe "Items API" do
     end
   end
 
-  describe "get all the merchant data for a given item ID" do
+  describe "get merchant data for a given item ID" do
     it "get the merchant data for a given item ID" do
-      item = create(:item).id
-      list = create_list(:merchant, 7, item_ids: item)
+      merchant = create(:merchant)
+      items = create_list(:item, 2, merchant_id: merchant.id)
+      item = items.first
 
-      get "/api/v1/items/#{item}/merchants"
-
+      get("/api/v1/items/#{item.id}/merchant")
+      
       merchants = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
-      expect(merchants[:data].count).to eq(8)
+      expect(merchants[:data].count).to eq(2)
 
       merchants[:data].each do |merchant|
         expect(merchant).to have_key(:id)
