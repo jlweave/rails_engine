@@ -60,7 +60,6 @@ describe "Merchants API" do
       expect(items[:data].count).to eq(7)
 
       items[:data].each do |item|
-        # require 'pry'; binding.pry
         expect(item).to have_key(:id)
         expect(item[:id]).to be_a(String)
 
@@ -75,15 +74,19 @@ describe "Merchants API" do
 
       end
     end
-    
-    xit "happy path: get correct error for incorrect amount" do
-      
-
-    end
-
-    xit "sad path: bad integer id returns 404" do
-
-      
+   
+    describe "find a partial"
+    it "can return a merchant with a partial" do
+      merchant1 = create(:merchant, name: "Annie")
+      merchant2 = create(:merchant, name: "Lacey")
+      merchant3 = create(:merchant, name: "Kenz")
+      get "/api/v1/merchants/find_all?name=an"
+      # require 'pry'; binding.pry
+        result = JSON.parse(response.body, symbolize_names: true)
+        expect(response).to be_successful
+        # require 'pry'; binding.pry
+        expect(result[:data][:id].to_i).to eq(merchant1.id)
+        expect(result[:data][:attributes][:name]).to eq(merchant1.name)
     end
   end
 end

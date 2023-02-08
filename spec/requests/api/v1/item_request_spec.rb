@@ -88,10 +88,6 @@ describe "Items API" do
       expect(created_item.merchant_id).to eq(item_params[:merchant_id])
 
     end
-
-    xit "response should be okay to process | AssertionError: expected response to have status code 201 but got 200" do
-
-    end
   end
 
   describe "edit an item" do
