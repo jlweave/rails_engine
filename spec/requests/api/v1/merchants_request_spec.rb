@@ -86,6 +86,7 @@ describe "Merchants API" do
         expect(response).to be_successful
         # require 'pry'; binding.pry
         expect(result[:data][:id].to_i).to eq(merchant1.id)
+        # require 'pry'; binding.pry
         expect(result[:data][:attributes][:name]).to eq(merchant1.name)
     end
   end

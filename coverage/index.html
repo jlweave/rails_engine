@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-02-07T17:43:55-07:00">2023-02-07T17:43:55-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-02-07T18:16:38-07:00">2023-02-07T18:16:38-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  94.05%
+  90.64%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.69
+         1.64
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>168</b> relevant lines,
-    <span class="green"><b>158</b> lines covered</span> and
-    <span class="red"><b>10</b> lines missed. </span>
+    <b>171</b> relevant lines,
+    <span class="green"><b>155</b> lines covered</span> and
+    <span class="red"><b>16</b> lines missed. </span>
     (<span class="green">
-  94.05%
+  90.64%
 </span>
 )
   </div>
@@ -106,7 +106,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#d46823947728098da4014467a927b79f482ffd6d" class="src_link" title="app/controllers/api/v1/merchant_search_controller.rb">app/controllers/api/v1/merchant_search_controller.rb</a></td>
             <td class="yellow strong cell--number t-file__coverage">85.71 %</td>
-            <td class="cell--number">13</td>
+            <td class="cell--number">16</td>
             <td class="cell--number">7</td>
             <td class="cell--number">6</td>
             <td class="cell--number">1</td>
@@ -347,12 +347,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#3a5b5fd028017ae67aef3dc677054bb3f9401c74" class="src_link" title="spec/requests/api/v1/merchants_request_spec.rb">spec/requests/api/v1/merchants_request_spec.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">92</td>
-            <td class="cell--number">51</td>
-            <td class="cell--number">51</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">2.10</td>
+            <td class="yellow strong cell--number t-file__coverage">88.89 %</td>
+            <td class="cell--number">93</td>
+            <td class="cell--number">54</td>
+            <td class="cell--number">48</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">1.93</td>
             
           </tr>
         
@@ -1274,18 +1274,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
-            
-
-            <code class="ruby">    # require &#39;pry&#39;; binding.pry</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="4">
             <span class="hits">1</span>
             
 
@@ -1296,13 +1285,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
+          <li class="covered" data-hits="1" data-linenumber="5">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">    merchant = Merchant.where(&quot;name ILIKE ?&quot;, &quot;%#{search_params}%&quot;).order(:name).first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">    # require &#39;pry&#39;; binding.pry</code>
           </li>
         </div>
       
@@ -1335,12 +1335,23 @@
 
             
 
+            <code class="ruby">      # require &#39;pry&#39;; binding.pry</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
             <code class="ruby">    else</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="10">
+          <li class="missed" data-hits="0" data-linenumber="11">
             
             
 
@@ -1351,7 +1362,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1362,7 +1373,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -1373,7 +1384,29 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 
@@ -4793,8 +4826,8 @@
   <div class="header">
     <h3>spec/requests/api/v1/merchants_request_spec.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  88.89%
 </span>
 
       lines covered
@@ -4803,9 +4836,9 @@
     
 
     <div class="t-line-summary">
-      <b>51</b> relevant lines.
-      <span class="green"><b>51</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>54</b> relevant lines.
+      <span class="green"><b>48</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
 
     
@@ -5729,19 +5762,19 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="84">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="84">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      # require &#39;pry&#39;; binding.pry</code>
+            
+
+            <code class="ruby">      require &#39;pry&#39;; binding.pry</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="85">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="85">
+            
             
 
             
@@ -5751,8 +5784,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="86">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="86">
+            
             
 
             
@@ -5762,19 +5795,19 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="87">
+          <li class="missed" data-hits="0" data-linenumber="87">
             
             
 
             
 
-            <code class="ruby">        # require &#39;pry&#39;; binding.pry</code>
+            <code class="ruby">        require &#39;pry&#39;; binding.pry</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="88">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="88">
+            
             
 
             
@@ -5784,24 +5817,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="89">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby">        require &#39;pry&#39;; binding.pry</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="90">
+            
             
 
             
 
             <code class="ruby">        expect(result[:data][:attributes][:name]).to eq(merchant1.name)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="90">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -5812,12 +5845,23 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="92">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="93">
             
             
 
