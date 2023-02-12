@@ -80,14 +80,46 @@ describe "Merchants API" do
       merchant1 = create(:merchant, name: "Annie")
       merchant2 = create(:merchant, name: "Lacey")
       merchant3 = create(:merchant, name: "Kenz")
-      get "/api/v1/merchants/find_all?name=an"
-      # require 'pry'; binding.pry
+      get "/api/v1/merchants/find?name=an"
         result = JSON.parse(response.body, symbolize_names: true)
         expect(response).to be_successful
-        # require 'pry'; binding.pry
         expect(result[:data][:id].to_i).to eq(merchant1.id)
-        # require 'pry'; binding.pry
         expect(result[:data][:attributes][:name]).to eq(merchant1.name)
+    end
+
+    it "can return merchant that comes first alphabetically" do
+      merchant1 = create(:merchant, name: "Annie")
+      merchant2 = create(:merchant, name: "Lacey")
+      merchant3 = create(:merchant, name: "Ann Lynn")
+
+      get "/api/v1/merchants/find?name=an"
+
+      result = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to be_successful
+      expect(result[:data][:id].to_i).to eq(merchant3.id)
+      expect(result[:data][:attributes][:name]).to eq(merchant3.name)
+    end
+
+    it "can all merchant that have simular names" do
+      merchant1 = create(:merchant, name: "Annie")
+      merchant2 = create(:merchant, name: "Lacey")
+      merchant3 = create(:merchant, name: "Kenz")
+      merchant4 = create(:merchant, name: "Ann Lynn")
+      merchant5 = create(:merchant, name: "Ann Bolyn")
+
+      get "/api/v1/merchants/find_all?name=ann"
+
+      result = JSON.parse(response.body, symbolize_names: true)
+      # require 'pry'; binding.pry
+      expect(response).to be_successful
+      names = []
+      result[:data].each do |res|
+        # require 'pry'; binding.pry
+        # expect(result[:data][:id].to_i).to eq(merchant3.id)
+        # require 'pry'; binding.pry
+        names << res[:attributes][:name]
+      end
+      expect(names).to eq([merchant5.name, merchant4.name, merchant1.name])
     end
   end
 end

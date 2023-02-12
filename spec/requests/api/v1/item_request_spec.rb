@@ -129,17 +129,13 @@ describe "Items API" do
       get("/api/v1/items/#{item.id}/merchant")
       
       merchants = JSON.parse(response.body, symbolize_names: true)
-
+    
       expect(response).to be_successful
-      expect(merchants[:data].count).to eq(2)
+      expect(merchants[:data].count).to eq(3)
 
-      merchants[:data].each do |merchant|
-        expect(merchant).to have_key(:id)
-        expect(merchant[:id]).to be_a(String)
-
-        expect(merchant[:attributes]).to have_key(:name)
-        expect(merchant[:attributes][:name]).to be_a(String)   
-      end
+      expect(merchants[:data]).to have_key(:id)
+      expect(merchants[:data][:id]).to eq("10")
+      expect(merchants[:data][:attributes]).to have_key(:name)
     end
   end
 end
